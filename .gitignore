@@ -1,0 +1,6 @@
+.vs
+bin
+obj
+packages
+*.sln.docstates
+*.sln
