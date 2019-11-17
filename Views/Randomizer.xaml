@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:Randomizer_Client"
         mc:Ignorable="d" Height="450" Width="800">
     <Grid>
-        <Button Content="Вийти"  Grid.Column="2" HorizontalAlignment="Center" Height="38" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Width="275"  Background="#FF2CA3E0" Foreground="White" Command="{Binding SignOutCommand}"/>
+
+
+        <Button Content="Вийти" HorizontalAlignment="Center" Height="38" VerticalAlignment="Center" FontSize="20" Width="275"  Background="#FF2CA3E0" Foreground="White" Command="{Binding SignOutCommand}" Margin="490,378,35,34"/>
 
     </Grid>
 </UserControl>

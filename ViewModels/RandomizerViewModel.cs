@@ -9,7 +9,7 @@ using Randomizer_Client.Tools.Navigation;
 
 namespace Randomizer_Client.ViewModels
 {
-    class RandomizerViewModel
+    class RandomizerViewModel : BaseViewModel
     {
 
         private RelayCommand<object> _signOutCommand;

@@ -23,10 +23,10 @@
         </Grid.ColumnDefinitions>
 
         <Label Content="Логін" Grid.Column="1" HorizontalAlignment="Right"  Grid.Row="1" VerticalAlignment="Center" FontSize="20"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Center" Height="38" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" Width="275"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Center" Height="38" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" Width="275" Text="{Binding Login, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Label Content="Пароль" Grid.Column="1" HorizontalAlignment="Right"  Grid.Row="2" VerticalAlignment="Center" FontSize="20"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Center" Height="38" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" Width="275"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Center" Height="38" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" Width="275" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         <Button Content="Увійти" Grid.Column="2" HorizontalAlignment="Center" Height="38" Grid.Row="3" VerticalAlignment="Center" FontSize="20" Width="275" Foreground="White" Background="#FF158BC6" BorderBrush="White" Command="{Binding SignInCommand}"/>
         <Button Content="Зареєструватися" Grid.Column="2" HorizontalAlignment="Center" Height="38" Grid.Row="4" VerticalAlignment="Center" FontSize="20" Width="276" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF239AD6" Margin="33.333,10,33.333,26.667" Command="{Binding SignUpCommand}"/>
     </Grid>
