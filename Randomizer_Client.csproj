@@ -55,6 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Tools\BaseViewModel.cs" />
+    <Compile Include="Tools\Managers\NavigationManager.cs" />
+    <Compile Include="Tools\Navigation\BaseNavigationModel .cs" />
+    <Compile Include="Tools\Navigation\IContentOwner.cs" />
+    <Compile Include="Tools\Navigation\INavigatable.cs" />
+    <Compile Include="Tools\Navigation\INavigationModel.cs" />
+    <Compile Include="Tools\Navigation\InitializationNavigationModel .cs" />
+    <Compile Include="Tools\RelayCommand.cs" />
+    <Compile Include="ViewModels\RandomizerViewModel.cs" />
+    <Compile Include="ViewModels\SignInViewModel.cs" />
+    <Compile Include="ViewModels\SignUpViewModel.cs" />
     <Compile Include="Views\SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
@@ -117,9 +129,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tools\" />
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

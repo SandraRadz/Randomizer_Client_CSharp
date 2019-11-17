@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="Randomizer" Height="450" Width="800">
     <Grid>
-        <local:SignUp></local:SignUp>
+        <ContentControl Name="_contentControl" IsEnabled="{Binding IsControlEnabled, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></ContentControl>
     </Grid>
 </Window>

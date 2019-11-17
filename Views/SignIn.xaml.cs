@@ -10,30 +10,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Randomizer_Client.Tools.Navigation;
+using Randomizer_Client.ViewModels;
 
 namespace Randomizer_Client.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class SignIn 
+    public partial class SignIn : INavigatable
     {
         public SignIn()
         {
             InitializeComponent();
+            DataContext = new SignInViewModel();
         }
 
-       
-        private void Sign_In_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Go_To_Sign_Up_Click(object sender, RoutedEventArgs e)
-        {
-          
-        }
     }
 }

@@ -45,8 +45,8 @@
         <Label Content="Повторити пароль" Grid.Column="1" HorizontalAlignment="Right"  Grid.Row="6" VerticalAlignment="Center" FontSize="20"/>
         <TextBox Grid.Column="2" HorizontalAlignment="Center" Height="38" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" Width="275"/>
 
-        <Button Content="Зареєструватися" Grid.Column="2" HorizontalAlignment="Center" Height="38" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Width="275" Click="Sign_Up_Click" Background="#FF2CA3E0" Foreground="White"/>
-        <Button Content="Вже є акаунт" Grid.Column="2" HorizontalAlignment="Center" Height="38" Grid.Row="8" VerticalAlignment="Center" FontSize="20" Width="275" Click="Go_To_Sign_In_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2CA3E0"/>
+        <Button Content="Зареєструватися" Grid.Column="2" HorizontalAlignment="Center" Height="38" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Width="275"  Background="#FF2CA3E0" Foreground="White" Command="{Binding SignUpCommand}"/>
+        <Button Content="Вже є акаунт" Grid.Column="2" HorizontalAlignment="Center" Height="38" Grid.Row="8" VerticalAlignment="Center" FontSize="20" Width="275" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2CA3E0" Command="{Binding SignInCommand}"/>
 
     </Grid>
 </UserControl>
