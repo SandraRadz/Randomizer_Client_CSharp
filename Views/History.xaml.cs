@@ -6,13 +6,14 @@ namespace Randomizer_Client.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Randomizer: INavigatable
+    public partial class History: INavigatable
     {
-        public Randomizer()
+        public History()
         {
             InitializeComponent();
-            DataContext = new RandomizerViewModel();
+            DataContext = new HistoryViewModel();
         }
 
+        
     }
 }

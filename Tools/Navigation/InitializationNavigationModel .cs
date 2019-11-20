@@ -2,6 +2,7 @@
 using RandomizerView = Randomizer_Client.Views.Randomizer;
 using SignUpView = Randomizer_Client.Views.SignUp;
 using SignInView = Randomizer_Client.Views.SignIn;
+using HistoryView = Randomizer_Client.Views.History;
 
 
 namespace Randomizer_Client.Tools.Navigation
@@ -24,6 +25,9 @@ namespace Randomizer_Client.Tools.Navigation
                     break;
                 case ViewType.Randomizer:
                     ViewsDictionary.Add(viewType, new RandomizerView());
+                    break;
+                case ViewType.History:
+                    ViewsDictionary.Add(viewType, new HistoryView());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(viewType), viewType, null);

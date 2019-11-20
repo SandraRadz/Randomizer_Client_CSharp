@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using Randomizer_Client.Models;
 using Randomizer_Client.Tools;
 using Randomizer_Client.Tools.Managers;
 using Randomizer_Client.Tools.Navigation;
@@ -77,15 +78,32 @@ namespace Randomizer_Client.ViewModels
 
         private async void SignInInplementation(object obj)
         {
-             //LoaderManeger.Instance.ShowLoader();
+            LoaderManager.Instance.ShowLoader();
             await Task.Run(() =>
             {
                 Thread.Sleep(2000);
+                User currentUser;
+                try
+                {
+                    currentUser = StationManager.DataStorage.GetUserByLoginAndPassword(_login, _password);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Sign In failed fo user {_login}. Reason:{Environment.NewLine}{ex.Message}");
+                    return false;
+                }
+                if (currentUser == null)
+                {
+                    MessageBox.Show(
+                        $"Sign In failed fo user {_login}. Reason:{Environment.NewLine}User does not exist.");
+                    return false;
+                }
+                StationManager.CurrentUser = currentUser;
+                MessageBox.Show($"Sign In successfull fo user {_login}.");
+                return true;
             });
-            //LoaderManeger.Instance.HideLoader();
-
-            // TO DO: check with db
-            MessageBox.Show($"Hello {_login}");
+            LoaderManager.Instance.HideLoader();
+            
             NavigationManager.Instance.Navigate(ViewType.Randomizer);
         }
     }

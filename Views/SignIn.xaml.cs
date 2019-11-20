@@ -25,6 +25,5 @@ namespace Randomizer_Client.Views
             InitializeComponent();
             DataContext = new SignInViewModel();
         }
-
     }
 }

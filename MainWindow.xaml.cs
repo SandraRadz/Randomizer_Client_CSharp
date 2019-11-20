@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Randomizer_Client.Tools.Managers;
 using Randomizer_Client.Tools.Navigation;
+using Randomizer_Client.ViewModels;
 
 namespace Randomizer_Client
 {
@@ -30,8 +32,15 @@ namespace Randomizer_Client
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel();
             NavigationManager.Instance.Initialize(new InitializationNavigationModel(this));
             NavigationManager.Instance.Navigate(ViewType.SignIn);
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            StationManager.CloseApp();
         }
     }
 }

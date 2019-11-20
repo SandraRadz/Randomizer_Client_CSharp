@@ -126,13 +126,13 @@ namespace Randomizer_Client.ViewModels
 
         private async void SignUpInplementation(object obj)
         {
-            //LoaderManeger.Instance.ShowLoader();
+            LoaderManager.Instance.ShowLoader();
             await Task.Run(() =>
             {
                 // TO DO: send to DB
                 Thread.Sleep(2000);
             });
-            //LoaderManeger.Instance.HideLoader();
+            LoaderManager.Instance.HideLoader();
             
             MessageBox.Show($"User with name {_login} was created");
             NavigationManager.Instance.Navigate(ViewType.Randomizer);

@@ -4,7 +4,8 @@
     {
         SignIn,
         SignUp,
-        Randomizer
+        Randomizer,
+        History
     }
 
     interface INavigationModel
