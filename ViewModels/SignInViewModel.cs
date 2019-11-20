@@ -37,11 +37,12 @@ namespace Randomizer_Client.ViewModels
             get { return _password; }
             set
             {
-                _password = "";
-                for (int i = 0; i < value.Length; i++)
-                {
-                    _password += "*";
-                }
+                // _password = "";
+                // for (int i = 0; i < value.Length; i++)
+                // {
+                //     _password += "*";
+                // }
+                _password = value;
                 OnPropertyChanged();
             }
         }

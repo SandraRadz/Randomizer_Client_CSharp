@@ -88,7 +88,6 @@ namespace Randomizer_Client.ViewModels
             LoaderManager.Instance.ShowLoader();
             await Task.Run(() =>
             {
-
                 int[] array = new int[_to - _from + 1];
                 for (int i = 0; i < array.Length; i++)
                 {

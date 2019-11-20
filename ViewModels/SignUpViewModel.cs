@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -69,11 +66,7 @@ namespace Randomizer_Client.ViewModels
             get { return _password; }
             set
             {
-                _password = "";
-                for (int i = 0; i < value.Length; i++)
-                {
-                    _password += "*";
-                }
+                _password = value;
                 OnPropertyChanged();
             }
         }
@@ -83,11 +76,7 @@ namespace Randomizer_Client.ViewModels
             get { return _passwordConfirmation; }
             set
             {
-                _passwordConfirmation = "";
-                for (int i = 0; i < value.Length; i++)
-                {
-                    _passwordConfirmation += "*";
-                }
+                _passwordConfirmation = value;
                 OnPropertyChanged();
             }
         }
