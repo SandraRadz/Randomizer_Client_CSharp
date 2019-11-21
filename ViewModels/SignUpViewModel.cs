@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using Randomizer_Client.Models;
 using Randomizer_Client.Tools;
 using Randomizer_Client.Tools.Managers;
 using Randomizer_Client.Tools.Navigation;
@@ -102,29 +103,64 @@ namespace Randomizer_Client.ViewModels
         }
 
 
-        // TO DO: check  _password == _passwordConfirmation
-        // TO DO: print error
-        // TO DO: validation for fields
         private bool CanExecuteCommand()
         {
             return !string.IsNullOrWhiteSpace(_firstName) && !string.IsNullOrWhiteSpace(_lastName) &&
                    !string.IsNullOrWhiteSpace(_email) && !string.IsNullOrWhiteSpace(_login) &&
-                   !string.IsNullOrWhiteSpace(_password) && !string.IsNullOrWhiteSpace(_passwordConfirmation) &&
-                    _password == _passwordConfirmation;
+                   !string.IsNullOrWhiteSpace(_password) && !string.IsNullOrWhiteSpace(_passwordConfirmation);
         }
 
+        //TO DO: email validation
         private async void SignUpInplementation(object obj)
         {
             LoaderManager.Instance.ShowLoader();
-            await Task.Run(() =>
+            var result = await Task.Run(() =>
             {
-                // TO DO: send to DB
-                Thread.Sleep(2000);
+                try
+                {
+                    Thread.Sleep(1000);
+
+                    //if (!new EmailAddressAttribute().IsValid(_email))
+                    //{
+                    //    MessageBox.Show($"Sign Up failed fo user {_login}. Reason:{Environment.NewLine} Email {_email} is not valid.");
+                    //    return false;
+                    //}
+                    if (_password != _passwordConfirmation)
+                    {
+                        MessageBox.Show($"Sign Up failed fo user {_login}. Reason:{Environment.NewLine} Password and PasswordConfirmation are different.");
+                        return false;
+                    }
+                    if (StationManager.DataStorage.UserExists(_login))
+                    {
+                        MessageBox.Show($"Sign Up failed fo user {_login}. Reason:{Environment.NewLine} User with such login already exists.");
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Sign Up failed fo user {_login}. Reason:{Environment.NewLine} {ex.Message}");
+                    return false;
+                }
+                try
+                {
+                    var user = new User(_firstName, _lastName, _login, _password, _email);
+                    StationManager.DataStorage.AddUser(user);
+                    StationManager.CurrentUser = user;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Sign Up failed fo user {_login}. Reason:{Environment.NewLine} {ex.Message}");
+                    return false;
+                }
+                MessageBox.Show($"User {_login} was successfully created.");
+                return true;
             });
             LoaderManager.Instance.HideLoader();
             
-            MessageBox.Show($"User with name {_login} was created");
-            NavigationManager.Instance.Navigate(ViewType.Randomizer);
+            if (result)
+            {
+                NavigationManager.Instance.Navigate(ViewType.Randomizer);
+            }
         }
 
     }

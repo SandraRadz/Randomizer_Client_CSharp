@@ -37,11 +37,6 @@ namespace Randomizer_Client.ViewModels
             get { return _password; }
             set
             {
-                // _password = "";
-                // for (int i = 0; i < value.Length; i++)
-                // {
-                //     _password += "*";
-                // }
                 _password = value;
                 OnPropertyChanged();
             }
@@ -80,7 +75,7 @@ namespace Randomizer_Client.ViewModels
         private async void SignInInplementation(object obj)
         {
             LoaderManager.Instance.ShowLoader();
-            await Task.Run(() =>
+            var result = await Task.Run(() =>
             {
                 Thread.Sleep(2000);
                 User currentUser;
@@ -104,8 +99,10 @@ namespace Randomizer_Client.ViewModels
                 return true;
             });
             LoaderManager.Instance.HideLoader();
-            
-            NavigationManager.Instance.Navigate(ViewType.Randomizer);
+            if (result)
+            {
+                NavigationManager.Instance.Navigate(ViewType.Randomizer);
+            }
         }
     }
 }

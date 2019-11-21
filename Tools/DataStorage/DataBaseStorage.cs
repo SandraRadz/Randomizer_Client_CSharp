@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Randomizer_Client.Models;
 
 namespace Randomizer_Client.Tools.DataStorage
@@ -11,17 +12,24 @@ namespace Randomizer_Client.Tools.DataStorage
     {
         public bool UserExists(string login)
         {
-            throw new NotImplementedException();
+            // request to server
+            if (login == "SandraRadz")
+            {
+                return true;
+            }
+            return false;
         }
 
         public User GetUserByLoginAndPassword(string login, string password)
         {
-            throw new NotImplementedException();
+            // request to server
+            return new User("Sasha", "Radz", "SandraRadz", "1234", "o.radz@gmail.com");
         }
 
         public void AddUser(User user)
         {
-            throw new NotImplementedException();
+            // request to server
+
         }
 
 
