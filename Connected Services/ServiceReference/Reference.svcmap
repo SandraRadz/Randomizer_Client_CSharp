@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2851bec3-1a01-4d1d-ae7c-1c1937c47625" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/RandomizerLib/Service1/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="0e5aea8e-6bfc-4413-b84c-a95f780b3b0e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RandomizerLib/Service1/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="e8846492-05bd-43f6-be03-05f2d5e72a82" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RandomizerLib/Service1/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="0994cf69-9c55-4bb9-b0f1-947fd11cbdc2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RandomizerLib/Service1/mex" />
+    <MetadataFile FileName="RandomizerLib.xsd" MetadataType="Schema" ID="2fd8186c-8ec0-450f-9387-3e26afde7d66" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RandomizerLib/Service1/mex" />
+    <MetadataFile FileName="RandomizerLib.Exception.xsd" MetadataType="Schema" ID="fb0cef01-10da-4ae8-a625-7ee6e90dde45" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RandomizerLib/Service1/mex" />
+    <MetadataFile FileName="RandomizerLib.Dto.xsd" MetadataType="Schema" ID="3ab85420-77f9-41bb-bb4a-3e2ea088f8a6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RandomizerLib/Service1/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

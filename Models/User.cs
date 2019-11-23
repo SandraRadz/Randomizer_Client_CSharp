@@ -42,8 +42,14 @@ namespace Randomizer_Client.Models
             _name = name;
             _surname = surname;
             _login = login;
-            _password = password;
+            SetPassword(password);
             _email = email;
+        }
+
+        private void SetPassword(string password)
+        {
+            //TODO Add encription
+            _password = password;
         }
 
     }

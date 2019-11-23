@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,7 +23,10 @@ namespace Randomizer_Client.ViewModels
         private RelayCommand<object> _signInCommand;
         private RelayCommand<object> _signUpCommand;
 
-
+        public SignUpViewModel()
+        {
+            
+        }
         public string FirstName
         {
             get { return _firstName; }
@@ -110,7 +114,7 @@ namespace Randomizer_Client.ViewModels
                    !string.IsNullOrWhiteSpace(_password) && !string.IsNullOrWhiteSpace(_passwordConfirmation);
         }
 
-        //TO DO: email validation
+       
         private async void SignUpInplementation(object obj)
         {
             LoaderManager.Instance.ShowLoader();
@@ -120,11 +124,11 @@ namespace Randomizer_Client.ViewModels
                 {
                     Thread.Sleep(1000);
 
-                    //if (!new EmailAddressAttribute().IsValid(_email))
-                    //{
-                    //    MessageBox.Show($"Sign Up failed fo user {_login}. Reason:{Environment.NewLine} Email {_email} is not valid.");
-                    //    return false;
-                    //}
+                    if (!new EmailAddressAttribute().IsValid(_email))
+                    {
+                        MessageBox.Show($"Sign Up failed fo user {_login}. Reason:{Environment.NewLine} Email {_email} is not valid.");
+                        return false;
+                    }
                     if (_password != _passwordConfirmation)
                     {
                         MessageBox.Show($"Sign Up failed fo user {_login}. Reason:{Environment.NewLine} Password and PasswordConfirmation are different.");

@@ -17,12 +17,20 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="3" Grid.Row="0" Content="Вийти" HorizontalAlignment="Right" Height="38" VerticalAlignment="Center" FontSize="20"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2CA3E0" Command="{Binding SignOutCommand}" Margin="0,10,33.333,8" />
-        <Button Grid.Column="3" Grid.Row="4" Content="Назад" HorizontalAlignment="Right" Height="38" VerticalAlignment="Center" FontSize="20"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2CA3E0" Command="{Binding GoBackCommand}" Margin="0,10,33.333,8" />
+        <Button Grid.Column="4" Grid.Row="0" Content="Вийти" HorizontalAlignment="Right" Height="38" VerticalAlignment="Center" FontSize="20"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2CA3E0" Command="{Binding SignOutCommand}" Margin="0,10,33.333,8" />
+
+        <Label Content="Від" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" FontSize="20"/>
+        <Label Content="До" Grid.Column="2" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" FontSize="20"/>
+        <Label Content="К-сть" Grid.Column="3" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" FontSize="20"/>
+        <Label Content="Дата" Grid.Column="4" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" FontSize="20"/>
+
+
+        <Button Grid.Column="4" Grid.Row="4" Content="Назад" HorizontalAlignment="Right" Height="38" VerticalAlignment="Center" FontSize="20"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2CA3E0" Command="{Binding GoBackCommand}" Margin="0,10,33.333,8" />
 
     </Grid>
 </UserControl>

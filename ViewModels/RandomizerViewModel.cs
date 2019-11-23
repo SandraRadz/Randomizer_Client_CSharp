@@ -61,6 +61,10 @@ namespace Randomizer_Client.ViewModels
                 return _signOutCommand ?? (_signOutCommand = new RelayCommand<object>(
                            o =>
                            {
+                               MessageBox.Show(StationManager.CurrentUser.Login);
+
+                               StationManager.CurrentUser = null;
+                               MessageBox.Show(StationManager.CurrentUser.Login);
                                NavigationManager.Instance.Navigate(ViewType.SignIn);
                            }));
             }

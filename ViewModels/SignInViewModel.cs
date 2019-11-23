@@ -23,6 +23,12 @@ namespace Randomizer_Client.ViewModels
         private RelayCommand<object> _signUpCommand;
 
 
+        public SignInViewModel()
+        {
+            Login = "";
+            Password = "";
+        }
+
         public string Login
         {
             get { return _login; }
