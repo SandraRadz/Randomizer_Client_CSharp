@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using Randomizer_Client.Models;
 using Randomizer_Client.Tools.DataStorage;
@@ -13,7 +14,7 @@ namespace Randomizer_Client.Tools.Managers
         private static IDataStorage _dataStorage;
 
         internal static User CurrentUser { get; set; }
-        internal static ICollection<Request> HistoryList { get; set; }
+        internal static ObservableCollection<Request> HistoryList { get; set; }
 
         internal static IDataStorage DataStorage
         {

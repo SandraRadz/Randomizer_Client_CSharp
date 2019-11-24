@@ -22,7 +22,7 @@ namespace Randomizer_Client.ViewModels
         private RelayCommand<object> _signOutCommand;
         private RelayCommand<object> _goBackCommand;
 
-        private ICollection<Request> _requests;
+        private ObservableCollection<Request> _requests;
 
         internal HistoryViewModel()
         {
@@ -49,7 +49,7 @@ namespace Randomizer_Client.ViewModels
             set { _time = value; }
         }
 
-        public ICollection<Request> Requests
+        public ObservableCollection<Request> Requests
         {
             get { return _requests; }
             set

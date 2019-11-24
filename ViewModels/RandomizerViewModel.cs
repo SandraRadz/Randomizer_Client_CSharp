@@ -126,12 +126,8 @@ namespace Randomizer_Client.ViewModels
             LoaderManager.Instance.ShowLoader();
             await Task.Run(() =>
             {
-               
                 StationManager.HistoryList = StationManager.DataStorage.GetHistoryByLogin(StationManager.CurrentUser.Login);
-                foreach (var item in StationManager.HistoryList)
-                {
-                    System.Diagnostics.Debug.WriteLine(item.From);
-                }
+                
 
             });
             LoaderManager.Instance.HideLoader();

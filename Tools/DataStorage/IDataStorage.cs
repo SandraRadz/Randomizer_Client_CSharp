@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using Randomizer_Client.Models;
-using Randomizer_Client.ServiceReference;
 
 namespace Randomizer_Client.Tools.DataStorage
 {
@@ -18,7 +13,7 @@ namespace Randomizer_Client.Tools.DataStorage
 
         void SaveHistory(string login, int from, int to, int count);
 
-        ICollection<Request> GetHistoryByLogin(string login);
+        ObservableCollection<Request> GetHistoryByLogin(string login);
 
     }
 }

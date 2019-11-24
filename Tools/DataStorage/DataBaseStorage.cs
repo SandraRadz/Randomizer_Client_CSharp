@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,7 +96,7 @@ namespace Randomizer_Client.Tools.DataStorage
         }
 
 
-        public ICollection<Request> GetHistoryByLogin(string login)
+        public ObservableCollection<Request> GetHistoryByLogin(string login)
         {
             try
             {
@@ -103,7 +104,7 @@ namespace Randomizer_Client.Tools.DataStorage
 
                 ICollection<RequestDto> requestList = server.GetUserHistoryBy(login);
 
-                ICollection<Request> historyList = new List<Request>();
+                ObservableCollection<Request> historyList = new ObservableCollection<Request>();
 
                 foreach (var item in requestList)
                 {
