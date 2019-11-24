@@ -3,12 +3,16 @@ using System.Collections.Generic;
 
 namespace Randomizer_Client.Models
 {
+    [Serializable]
     public class User
     {
+        [NonSerialized]
         private string _name;
+        [NonSerialized]
         private string _surname;
         private string _login;
         private string _password;
+        [NonSerialized]
         private string _email;
 
         public string Name

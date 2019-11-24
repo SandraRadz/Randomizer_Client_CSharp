@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,8 +26,18 @@ namespace Randomizer_Client.ViewModels
 
         public SignInViewModel()
         {
-            Login = "";
-            Password = "";
+            try
+            {
+                User user = SerializationManager.Deserialize<User>(FileFolderHelper.StorageFilePath);
+                _login = user.Login;
+                _password = user.Password;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                _login = "";
+                _password = "";
+            }
         }
 
         public string Login
@@ -101,6 +112,7 @@ namespace Randomizer_Client.ViewModels
                     return false;
                 }
                 StationManager.CurrentUser = currentUser;
+                SerializationManager.Serialize(currentUser, FileFolderHelper.StorageFilePath);
                 MessageBox.Show($"Sign In successfull fo user {_login}.");
                 return true;
             });

@@ -150,6 +150,8 @@ namespace Randomizer_Client.ViewModels
                     var user = new User(_firstName, _lastName, _login, _password, _email);
                     StationManager.DataStorage.AddUser(user);
                     StationManager.CurrentUser = user;
+
+                    SerializationManager.Serialize(user, FileFolderHelper.StorageFilePath);
                 }
                 catch (Exception ex)
                 {
