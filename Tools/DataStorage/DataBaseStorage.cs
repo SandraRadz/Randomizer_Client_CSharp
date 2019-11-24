@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,11 +24,11 @@ namespace Randomizer_Client.Tools.DataStorage
 
                 ServiceReference.UserCredentialsDto cred = new ServiceReference.UserCredentialsDto();
                 cred.Login = login;
-                cred.Password = password;
+                cred.Password = EncodePasswordToBase64(password);
 
                 ServiceReference.UserDto findedUser = server.CheckCredentials(cred);
 
-                User user = new User(findedUser.Name, findedUser.Surname, findedUser.Login, findedUser.Password,
+                User user = new User(findedUser.Name, findedUser.Surname, findedUser.Login,  password,
                     findedUser.Email);
 
                 return user;
@@ -50,11 +51,10 @@ namespace Randomizer_Client.Tools.DataStorage
 
                 ServiceReference.UserDto userToSend = new ServiceReference.UserDto();
                 userToSend.Login = user.Login;
-                userToSend.Password = user.Password;
+                userToSend.Password = EncodePasswordToBase64(user.Password);
                 userToSend.Name = user.Name;
                 userToSend.Surname = user.Surname;
                 userToSend.Email = user.Email;
-
                 server.RegisterUser(userToSend);
             }
             catch (Exception ex)
@@ -119,9 +119,11 @@ namespace Randomizer_Client.Tools.DataStorage
                 return null;
             }
         }
-
-
-
-
+        public static string EncodePasswordToBase64(string password)
+        {
+            byte[] bytes = Encoding.Unicode.GetBytes(password);
+            byte[] inArray = HashAlgorithm.Create("SHA1").ComputeHash(bytes);
+            return Convert.ToBase64String(inArray);
+        }
     }
 }
