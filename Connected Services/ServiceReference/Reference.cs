@@ -124,51 +124,6 @@ namespace Randomizer_Client.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NoSuchUserException", Namespace="http://schemas.datacontract.org/2004/07/RandomizerLib.Exception")]
-    [System.SerializableAttribute()]
-    public partial class NoSuchUserException : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MessageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Message {
-            get {
-                return this.MessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
-                    this.MessageField = value;
-                    this.RaisePropertyChanged("Message");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="UserCredentialsDto", Namespace="http://schemas.datacontract.org/2004/07/RandomizerLib.Dto")]
     [System.SerializableAttribute()]
     public partial class UserCredentialsDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -228,22 +183,246 @@ namespace Randomizer_Client.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NoSuchUserException", Namespace="http://schemas.datacontract.org/2004/07/RandomizerLib.Exception")]
+    [System.SerializableAttribute()]
+    public partial class NoSuchUserException : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RequestDto", Namespace="http://schemas.datacontract.org/2004/07/RandomizerLib.Dto")]
+    [System.SerializableAttribute()]
+    public partial class RequestDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FromField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ToField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Count {
+            get {
+                return this.CountField;
+            }
+            set {
+                if ((this.CountField.Equals(value) != true)) {
+                    this.CountField = value;
+                    this.RaisePropertyChanged("Count");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int From {
+            get {
+                return this.FromField;
+            }
+            set {
+                if ((this.FromField.Equals(value) != true)) {
+                    this.FromField = value;
+                    this.RaisePropertyChanged("From");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((this.TimeField.Equals(value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int To {
+            get {
+                return this.ToField;
+            }
+            set {
+                if ((this.ToField.Equals(value) != true)) {
+                    this.ToField = value;
+                    this.RaisePropertyChanged("To");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryDto", Namespace="http://schemas.datacontract.org/2004/07/RandomizerLib.Dto")]
+    [System.SerializableAttribute()]
+    public partial class HistoryDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FromField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LoginField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ToField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Count {
+            get {
+                return this.CountField;
+            }
+            set {
+                if ((this.CountField.Equals(value) != true)) {
+                    this.CountField = value;
+                    this.RaisePropertyChanged("Count");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int From {
+            get {
+                return this.FromField;
+            }
+            set {
+                if ((this.FromField.Equals(value) != true)) {
+                    this.FromField = value;
+                    this.RaisePropertyChanged("From");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Login {
+            get {
+                return this.LoginField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LoginField, value) != true)) {
+                    this.LoginField = value;
+                    this.RaisePropertyChanged("Login");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int To {
+            get {
+                return this.ToField;
+            }
+            set {
+                if ((this.ToField.Equals(value) != true)) {
+                    this.ToField = value;
+                    this.RaisePropertyChanged("To");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService1")]
     public interface IService1 {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUser", ReplyAction="http://tempuri.org/IService1/GetUserResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Randomizer_Client.ServiceReference.NoSuchUserException), Action="http://tempuri.org/IService1/GetUserNoSuchUserExceptionFault", Name="NoSuchUserException", Namespace="http://schemas.datacontract.org/2004/07/RandomizerLib.Exception")]
-        Randomizer_Client.ServiceReference.UserDto GetUser(string login);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IsUserExist", ReplyAction="http://tempuri.org/IService1/IsUserExistResponse")]
+        bool IsUserExist(string login);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUser", ReplyAction="http://tempuri.org/IService1/GetUserResponse")]
-        System.Threading.Tasks.Task<Randomizer_Client.ServiceReference.UserDto> GetUserAsync(string login);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ExistUser", ReplyAction="http://tempuri.org/IService1/ExistUserResponse")]
-        bool ExistUser(string login);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ExistUser", ReplyAction="http://tempuri.org/IService1/ExistUserResponse")]
-        System.Threading.Tasks.Task<bool> ExistUserAsync(string login);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IsUserExist", ReplyAction="http://tempuri.org/IService1/IsUserExistResponse")]
+        System.Threading.Tasks.Task<bool> IsUserExistAsync(string login);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterUser", ReplyAction="http://tempuri.org/IService1/RegisterUserResponse")]
         void RegisterUser(Randomizer_Client.ServiceReference.UserDto user);
@@ -258,17 +437,17 @@ namespace Randomizer_Client.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CheckCredentials", ReplyAction="http://tempuri.org/IService1/CheckCredentialsResponse")]
         System.Threading.Tasks.Task<Randomizer_Client.ServiceReference.UserDto> CheckCredentialsAsync(Randomizer_Client.ServiceReference.UserCredentialsDto user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UserHistory", ReplyAction="http://tempuri.org/IService1/UserHistoryResponse")]
-        void UserHistory(string login);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserHistoryBy", ReplyAction="http://tempuri.org/IService1/GetUserHistoryByResponse")]
+        Randomizer_Client.ServiceReference.RequestDto[] GetUserHistoryBy(string login);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UserHistory", ReplyAction="http://tempuri.org/IService1/UserHistoryResponse")]
-        System.Threading.Tasks.Task UserHistoryAsync(string login);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SaveHistory", ReplyAction="http://tempuri.org/IService1/SaveHistoryResponse")]
-        void SaveHistory(string login, int from, int to, int count);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserHistoryBy", ReplyAction="http://tempuri.org/IService1/GetUserHistoryByResponse")]
+        System.Threading.Tasks.Task<Randomizer_Client.ServiceReference.RequestDto[]> GetUserHistoryByAsync(string login);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SaveHistory", ReplyAction="http://tempuri.org/IService1/SaveHistoryResponse")]
-        System.Threading.Tasks.Task SaveHistoryAsync(string login, int from, int to, int count);
+        void SaveHistory(Randomizer_Client.ServiceReference.HistoryDto history);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SaveHistory", ReplyAction="http://tempuri.org/IService1/SaveHistoryResponse")]
+        System.Threading.Tasks.Task SaveHistoryAsync(Randomizer_Client.ServiceReference.HistoryDto history);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -298,20 +477,12 @@ namespace Randomizer_Client.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public Randomizer_Client.ServiceReference.UserDto GetUser(string login) {
-            return base.Channel.GetUser(login);
+        public bool IsUserExist(string login) {
+            return base.Channel.IsUserExist(login);
         }
         
-        public System.Threading.Tasks.Task<Randomizer_Client.ServiceReference.UserDto> GetUserAsync(string login) {
-            return base.Channel.GetUserAsync(login);
-        }
-        
-        public bool ExistUser(string login) {
-            return base.Channel.ExistUser(login);
-        }
-        
-        public System.Threading.Tasks.Task<bool> ExistUserAsync(string login) {
-            return base.Channel.ExistUserAsync(login);
+        public System.Threading.Tasks.Task<bool> IsUserExistAsync(string login) {
+            return base.Channel.IsUserExistAsync(login);
         }
         
         public void RegisterUser(Randomizer_Client.ServiceReference.UserDto user) {
@@ -330,20 +501,20 @@ namespace Randomizer_Client.ServiceReference {
             return base.Channel.CheckCredentialsAsync(user);
         }
         
-        public void UserHistory(string login) {
-            base.Channel.UserHistory(login);
+        public Randomizer_Client.ServiceReference.RequestDto[] GetUserHistoryBy(string login) {
+            return base.Channel.GetUserHistoryBy(login);
         }
         
-        public System.Threading.Tasks.Task UserHistoryAsync(string login) {
-            return base.Channel.UserHistoryAsync(login);
+        public System.Threading.Tasks.Task<Randomizer_Client.ServiceReference.RequestDto[]> GetUserHistoryByAsync(string login) {
+            return base.Channel.GetUserHistoryByAsync(login);
         }
         
-        public void SaveHistory(string login, int from, int to, int count) {
-            base.Channel.SaveHistory(login, from, to, count);
+        public void SaveHistory(Randomizer_Client.ServiceReference.HistoryDto history) {
+            base.Channel.SaveHistory(history);
         }
         
-        public System.Threading.Tasks.Task SaveHistoryAsync(string login, int from, int to, int count) {
-            return base.Channel.SaveHistoryAsync(login, from, to, count);
+        public System.Threading.Tasks.Task SaveHistoryAsync(Randomizer_Client.ServiceReference.HistoryDto history) {
+            return base.Channel.SaveHistoryAsync(history);
         }
     }
 }

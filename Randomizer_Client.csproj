@@ -159,6 +159,9 @@
     <None Include="Connected Services\ServiceReference\RandomizerLib.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiceReference\Randomizer_Client.ServiceReference.RequestDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference\Randomizer_Client.ServiceReference.UserDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

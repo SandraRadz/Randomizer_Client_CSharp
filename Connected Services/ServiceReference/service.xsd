@@ -2,38 +2,24 @@
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.datacontract.org/2004/07/RandomizerLib" />
   <xs:import namespace="http://schemas.datacontract.org/2004/07/RandomizerLib.Dto" />
-  <xs:element name="GetUser">
+  <xs:element name="IsUserExist">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetUserResponse">
+  <xs:element name="IsUserExistResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RandomizerLib" minOccurs="0" name="GetUserResult" nillable="true" type="q1:UserDto" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ExistUser">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ExistUserResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ExistUserResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="IsUserExistResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="RegisterUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RandomizerLib" minOccurs="0" name="user" nillable="true" type="q2:UserDto" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RandomizerLib" minOccurs="0" name="user" nillable="true" type="q1:UserDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -45,36 +31,35 @@
   <xs:element name="CheckCredentials">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RandomizerLib.Dto" minOccurs="0" name="user" nillable="true" type="q3:UserCredentialsDto" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RandomizerLib.Dto" minOccurs="0" name="user" nillable="true" type="q2:UserCredentialsDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CheckCredentialsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RandomizerLib" minOccurs="0" name="CheckCredentialsResult" nillable="true" type="q4:UserDto" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RandomizerLib" minOccurs="0" name="CheckCredentialsResult" nillable="true" type="q3:UserDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UserHistory">
+  <xs:element name="GetUserHistoryBy">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UserHistoryResponse">
+  <xs:element name="GetUserHistoryByResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RandomizerLib.Dto" minOccurs="0" name="GetUserHistoryByResult" nillable="true" type="q4:ArrayOfRequestDto" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SaveHistory">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="from" type="xs:int" />
-        <xs:element minOccurs="0" name="to" type="xs:int" />
-        <xs:element minOccurs="0" name="count" type="xs:int" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RandomizerLib.Dto" minOccurs="0" name="history" nillable="true" type="q5:HistoryDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

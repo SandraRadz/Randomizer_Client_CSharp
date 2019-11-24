@@ -23,6 +23,7 @@ namespace Randomizer_Client.ViewModels
                            o =>
                            {
                                StationManager.CurrentUser = null;
+                               StationManager.HistoryList = null;
                                NavigationManager.Instance.Navigate(ViewType.SignIn);
                            }));
             }

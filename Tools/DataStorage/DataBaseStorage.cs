@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Randomizer_Client.Models;
+using Randomizer_Client.ServiceReference;
 
 namespace Randomizer_Client.Tools.DataStorage
 {
@@ -32,6 +33,8 @@ namespace Randomizer_Client.Tools.DataStorage
             }
             catch (Exception ex)
             {
+
+                System.Diagnostics.Debug.WriteLine(ex);
                 return null;
             }
         }
@@ -55,31 +58,66 @@ namespace Randomizer_Client.Tools.DataStorage
             }
             catch (Exception ex)
             {
-                Console.Write(ex);
+
+                System.Diagnostics.Debug.WriteLine(ex);
             }
         }
 
         // TODO correct exception
         public bool UserExists(string login)
         {
-                ServiceReference.Service1Client server = new ServiceReference.Service1Client();
+            ServiceReference.Service1Client server = new ServiceReference.Service1Client();
 
-                return server.ExistUser(login);
+                return server.IsUserExist(login);
             
         }
 
+        
         public void SaveHistory(string login, int from, int to, int count)
         {
-            //ServiceReference.Service1Client server = new ServiceReference.Service1Client();
+            try
+            {
+                ServiceReference.Service1Client server = new ServiceReference.Service1Client();
 
-            //ServiceReference.UserDto userToSend = new ServiceReference.UserDto();
+                ServiceReference.HistoryDto historyToSend = new ServiceReference.HistoryDto();
 
+                historyToSend.Login = login;
+                historyToSend.From = from;
+                historyToSend.To = to;
+                historyToSend.Count = count;
 
-
-
+                server.SaveHistory(historyToSend);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+            }
         }
 
 
+        public ICollection<Request> GetHistoryByLogin(string login)
+        {
+            try
+            {
+                ServiceReference.Service1Client server = new ServiceReference.Service1Client();
+
+                ICollection<RequestDto> requestList = server.GetUserHistoryBy(login);
+
+                ICollection<Request> historyList = new List<Request>();
+
+                foreach (var item in requestList)
+                {
+                     historyList.Add(new Request(item.From, item.To, item.Count, item.Time));
+                }
+                
+                return historyList;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+                return null;
+            }
+        }
 
 
 

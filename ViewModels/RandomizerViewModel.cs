@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Randomizer_Client.Tools;
+using Randomizer_Client.Tools.DataStorage;
 using Randomizer_Client.Tools.Managers;
 using Randomizer_Client.Tools.Navigation;
 
@@ -61,10 +62,8 @@ namespace Randomizer_Client.ViewModels
                 return _signOutCommand ?? (_signOutCommand = new RelayCommand<object>(
                            o =>
                            {
-                               MessageBox.Show(StationManager.CurrentUser.Login);
-
                                StationManager.CurrentUser = null;
-                               MessageBox.Show(StationManager.CurrentUser.Login);
+                               StationManager.HistoryList = null;
                                NavigationManager.Instance.Navigate(ViewType.SignIn);
                            }));
             }
@@ -76,14 +75,13 @@ namespace Randomizer_Client.ViewModels
             {
                 return _generateCommand ?? (_generateCommand = new RelayCommand<object>(
                            GenerateInplementation, o => CanExecuteCommand()));
-                           
             }
         }
 
 
         public bool CanExecuteCommand()
         {
-            return _to>=_from;
+            return _to >= _from;
         }
 
         public async void GenerateInplementation(object obj)
@@ -92,18 +90,21 @@ namespace Randomizer_Client.ViewModels
             LoaderManager.Instance.ShowLoader();
             await Task.Run(() =>
             {
-                int[] array = new int[_to - _from + 1];
+                int size = _to - _from + 1;
+                int[] array = new int[size];
                 for (int i = 0; i < array.Length; i++)
                 {
-                    array[i] = i+_from;
+                    array[i] = i + _from;
                 }
-                
+
                 var rng = new Random();
                 rng.Shuffle(array);
                 foreach (var item in array)
                 {
                     Result += item + "\n";
                 }
+
+                StationManager.DataStorage.SaveHistory(StationManager.CurrentUser.Login, _from, _to, size);
             });
             LoaderManager.Instance.HideLoader();
         }
@@ -113,17 +114,29 @@ namespace Randomizer_Client.ViewModels
         {
             get
             {
-                return _historyCommand ?? (_historyCommand = new RelayCommand<object>(
-                           o =>
-                           {
-                               NavigationManager.Instance.Navigate(ViewType.History);
-                           }));
+                return _historyCommand ?? (_historyCommand = new RelayCommand<object>(HistoryInplementation));
             }
 
 
         }
 
+        public async void HistoryInplementation(object obj)
+        {
 
+            LoaderManager.Instance.ShowLoader();
+            await Task.Run(() =>
+            {
+               
+                StationManager.HistoryList = StationManager.DataStorage.GetHistoryByLogin(StationManager.CurrentUser.Login);
+                foreach (var item in StationManager.HistoryList)
+                {
+                    System.Diagnostics.Debug.WriteLine(item.From);
+                }
+
+            });
+            LoaderManager.Instance.HideLoader();
+            NavigationManager.Instance.Navigate(ViewType.History);
+        }
 
     }
 

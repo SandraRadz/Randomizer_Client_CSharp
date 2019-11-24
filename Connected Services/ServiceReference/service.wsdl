@@ -3,26 +3,17 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
-      <xsd:import namespace="http://schemas.datacontract.org/2004/07/RandomizerLib.Exception" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/RandomizerLib" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/RandomizerLib.Exception" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/RandomizerLib.Dto" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_GetUser_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetUser" />
+  <wsdl:message name="IService1_IsUserExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserExist" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetUser_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetUser_NoSuchUserExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/RandomizerLib.Exception" name="detail" element="q1:NoSuchUserException" />
-  </wsdl:message>
-  <wsdl:message name="IService1_ExistUser_InputMessage">
-    <wsdl:part name="parameters" element="tns:ExistUser" />
-  </wsdl:message>
-  <wsdl:message name="IService1_ExistUser_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ExistUserResponse" />
+  <wsdl:message name="IService1_IsUserExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserExistResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_RegisterUser_InputMessage">
     <wsdl:part name="parameters" element="tns:RegisterUser" />
@@ -37,13 +28,13 @@
     <wsdl:part name="parameters" element="tns:CheckCredentialsResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_CheckCredentials_NoSuchUserExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/RandomizerLib.Exception" name="detail" element="q2:NoSuchUserException" />
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/RandomizerLib.Exception" name="detail" element="q1:NoSuchUserException" />
   </wsdl:message>
-  <wsdl:message name="IService1_UserHistory_InputMessage">
-    <wsdl:part name="parameters" element="tns:UserHistory" />
+  <wsdl:message name="IService1_GetUserHistoryBy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserHistoryBy" />
   </wsdl:message>
-  <wsdl:message name="IService1_UserHistory_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UserHistoryResponse" />
+  <wsdl:message name="IService1_GetUserHistoryBy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserHistoryByResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_SaveHistory_InputMessage">
     <wsdl:part name="parameters" element="tns:SaveHistory" />
@@ -52,14 +43,9 @@
     <wsdl:part name="parameters" element="tns:SaveHistoryResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="GetUser">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUser" message="tns:IService1_GetUser_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUserResponse" message="tns:IService1_GetUser_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetUserNoSuchUserExceptionFault" name="NoSuchUserExceptionFault" message="tns:IService1_GetUser_NoSuchUserExceptionFault_FaultMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ExistUser">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExistUser" message="tns:IService1_ExistUser_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExistUserResponse" message="tns:IService1_ExistUser_OutputMessage" />
+    <wsdl:operation name="IsUserExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IsUserExist" message="tns:IService1_IsUserExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IsUserExistResponse" message="tns:IService1_IsUserExist_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegisterUser" message="tns:IService1_RegisterUser_InputMessage" />
@@ -70,9 +56,9 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/CheckCredentialsResponse" message="tns:IService1_CheckCredentials_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IService1/CheckCredentialsNoSuchUserExceptionFault" name="NoSuchUserExceptionFault" message="tns:IService1_CheckCredentials_NoSuchUserExceptionFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="UserHistory">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UserHistory" message="tns:IService1_UserHistory_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UserHistoryResponse" message="tns:IService1_UserHistory_OutputMessage" />
+    <wsdl:operation name="GetUserHistoryBy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUserHistoryBy" message="tns:IService1_GetUserHistoryBy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUserHistoryByResponse" message="tns:IService1_GetUserHistoryBy_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SaveHistory">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SaveHistory" message="tns:IService1_SaveHistory_InputMessage" />
@@ -81,20 +67,8 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetUser">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetUser" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-      <wsdl:fault name="NoSuchUserExceptionFault">
-        <soap:fault use="literal" name="NoSuchUserExceptionFault" namespace="" />
-      </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="ExistUser">
-      <soap:operation soapAction="http://tempuri.org/IService1/ExistUser" style="document" />
+    <wsdl:operation name="IsUserExist">
+      <soap:operation soapAction="http://tempuri.org/IService1/IsUserExist" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -123,8 +97,8 @@
         <soap:fault use="literal" name="NoSuchUserExceptionFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="UserHistory">
-      <soap:operation soapAction="http://tempuri.org/IService1/UserHistory" style="document" />
+    <wsdl:operation name="GetUserHistoryBy">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUserHistoryBy" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

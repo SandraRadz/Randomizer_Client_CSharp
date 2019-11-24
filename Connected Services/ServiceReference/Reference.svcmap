@@ -26,8 +26,8 @@
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="e8846492-05bd-43f6-be03-05f2d5e72a82" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RandomizerLib/Service1/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="0994cf69-9c55-4bb9-b0f1-947fd11cbdc2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RandomizerLib/Service1/mex" />
     <MetadataFile FileName="RandomizerLib.xsd" MetadataType="Schema" ID="2fd8186c-8ec0-450f-9387-3e26afde7d66" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RandomizerLib/Service1/mex" />
-    <MetadataFile FileName="RandomizerLib.Exception.xsd" MetadataType="Schema" ID="fb0cef01-10da-4ae8-a625-7ee6e90dde45" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RandomizerLib/Service1/mex" />
     <MetadataFile FileName="RandomizerLib.Dto.xsd" MetadataType="Schema" ID="3ab85420-77f9-41bb-bb4a-3e2ea088f8a6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RandomizerLib/Service1/mex" />
+    <MetadataFile FileName="RandomizerLib.Exception.xsd" MetadataType="Schema" ID="fb0cef01-10da-4ae8-a625-7ee6e90dde45" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RandomizerLib/Service1/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
