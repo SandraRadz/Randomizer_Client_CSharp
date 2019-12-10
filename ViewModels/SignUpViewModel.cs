@@ -126,23 +126,24 @@ namespace Randomizer_Client.ViewModels
 
                     if (!new EmailAddressAttribute().IsValid(_email))
                     {
-                        MessageBox.Show($"Sign Up failed fo user {_login}. Reason:{Environment.NewLine} Email {_email} is not valid.");
+                        MessageBox.Show($"Помилка в реєстрації користувача {_login}. Reason:{Environment.NewLine} Email {_email} не коректний.");
                         return false;
                     }
                     if (_password != _passwordConfirmation)
                     {
-                        MessageBox.Show($"Sign Up failed fo user {_login}. Reason:{Environment.NewLine} Password and PasswordConfirmation are different.");
+                        MessageBox.Show($"Помилка в реєстрації користувача {_login}. Reason:{Environment.NewLine}Пароль і підтвердження паролю не збігаються");
                         return false;
                     }
                     if (StationManager.DataStorage.UserExists(_login))
                     {
-                        MessageBox.Show($"Sign Up failed fo user {_login}. Reason:{Environment.NewLine} User with such login already exists.");
+                        MessageBox.Show($"Помилка в реєстрації користувача {_login}. Причина:{Environment.NewLine} Користувач з таким логіном вже існує. Оберіть інший");
                         return false;
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Sign Up failed fo user {_login}. Reason:{Environment.NewLine} {ex.Message}");
+                    MessageBox.Show($"Помилка в реєстрації користувача {_login}. Спробуйте ще раз.");
+                    Console.Write(ex.Message);
                     return false;
                 }
                 try
@@ -155,10 +156,11 @@ namespace Randomizer_Client.ViewModels
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Sign Up failed fo user {_login}. Reason:{Environment.NewLine} {ex.Message}");
+                    MessageBox.Show($"Помилка в реєстрації користувача {_login}. Спробуйте ще раз.");
+                    Console.Write(ex.Message);
                     return false;
                 }
-                MessageBox.Show($"User {_login} was successfully created.");
+                MessageBox.Show($"Користувач {_login}був успішно створений.");
                 return true;
             });
             LoaderManager.Instance.HideLoader();

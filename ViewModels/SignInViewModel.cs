@@ -102,18 +102,19 @@ namespace Randomizer_Client.ViewModels
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Sign In failed fo user {_login}. Reason:{Environment.NewLine}{ex.Message}");
+                    MessageBox.Show($"Помилка в авторизації користувача {_login}. Спробуйте ще раз");
+                    Console.Write(ex.Message);
                     return false;
                 }
                 if (currentUser == null)
                 {
                     MessageBox.Show(
-                        $"Sign In failed fo user {_login}. Reason:{Environment.NewLine}User does not exist.");
+                        $"Помилка в авторизації користувача {_login}. Причина:{Environment.NewLine}Користувач не існує.");
                     return false;
                 }
                 StationManager.CurrentUser = currentUser;
                 SerializationManager.Serialize(currentUser, FileFolderHelper.StorageFilePath);
-                MessageBox.Show($"Sign In successfull fo user {_login}.");
+                MessageBox.Show($"Успішна авторизація для користувача {_login}.");
                 return true;
             });
             LoaderManager.Instance.HideLoader();
