@@ -31,7 +31,7 @@
         <Button Grid.Column="3" Grid.Row="2" Content="Згенерувати" HorizontalAlignment="Center" Height="38" VerticalAlignment="Center" FontSize="20" Width="275"  Background="#FF2CA3E0" Foreground="White" Command="{Binding GenerateCommand}" />
 
 
-        <TextBox Grid.Column="1" Grid.ColumnSpan="3" IsReadOnly="True" HorizontalAlignment="Center" Height="180"  Grid.Row="3" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Center" Width="527" Margin="10.333,10,33.333,10" ScrollViewer.VerticalScrollBarVisibility="Auto" Text="{Binding Result, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <ListBox Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" Height="180"  Grid.Row="3" FontSize="20" VerticalAlignment="Center" Width="527" Margin="10.333,10,33.333,10" ScrollViewer.VerticalScrollBarVisibility="Auto" ItemsSource="{Binding ResultList}"/>
 
 
         <Button Grid.Column="3" Grid.Row="4" Content="Історія" HorizontalAlignment="Right" Height="38" VerticalAlignment="Center" FontSize="20"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2CA3E0" Command="{Binding HistoryCommand}" Margin="0,10,33.333,8" />
